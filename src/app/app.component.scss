@@ -1,0 +1,30 @@
+.cmaginet-header {
+    width: 100%;
+    display: flex;
+  
+    &-left {
+      flex: 0 0 256px;
+      display: flex;
+      align-items: center;
+  
+      & h1 {
+        padding: 0;
+        margin: 0 0 0 0.5em;
+      }
+    }
+  
+    &-middle {
+      justify-content: flex-start;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+    }
+  
+    &-right {
+      justify-content: flex-end;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
