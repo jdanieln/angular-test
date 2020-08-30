@@ -1,0 +1,41 @@
+<nb-card>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-6">
+                <app-character-card [character]="character">
+                </app-character-card>
+            </div>
+            <div class="col-6">
+                <nb-card>
+                    <nb-card-body>
+                        <nb-tabset>
+                        <nb-tab tabTitle="Comics">
+                            <div class="row">
+                                <nb-list>
+                                    <nb-list-item *ngFor="let comic of character?.comics.items">
+                                        {{ comic.name }}
+                                    </nb-list-item>
+                                </nb-list>
+                            </div>
+                        </nb-tab>
+                        <nb-tab tabTitle="Series">
+                            <nb-list>
+                                <nb-list-item *ngFor="let serie of character?.series.items">
+                                    {{ serie.name }}
+                                </nb-list-item>
+                            </nb-list>
+                        </nb-tab>
+                        <nb-tab tabTitle="Stories">
+                            <nb-list>
+                                <nb-list-item *ngFor="let story of character?.stories.items">
+                                    {{ story.name }}
+                                </nb-list-item>
+                            </nb-list>
+                        </nb-tab>
+                        </nb-tabset>    
+                    </nb-card-body>
+                    </nb-card>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

@@ -7,12 +7,34 @@ import {
   NbLogoutComponent
 } from '@nebular/auth';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CharactersComponent } from './pages/dashboard/characters/characters.component';
+import { CharacterDetailComponent } from './pages/dashboard/character-detail/character-detail.component';
 
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'dashboard'
+  },
+  {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'characters'
+      },
+      {
+        path: 'characters',
+        component: CharactersComponent
+      },
+      {
+        path: 'character/:characterId',
+        component: CharacterDetailComponent
+      }
+    ]
   },
   {
     path: 'auth',

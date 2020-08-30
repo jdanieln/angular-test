@@ -4,15 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbInputModule, NbIconModule, NbFormFieldModule, NbTabsetModule, NbListModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
 import { HttpClientModule } from '@angular/common/http';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HeaderComponent } from './pages/dashboard/componentes/header/header.component';
-import { FooterComponent } from './pages/dashboard/componentes/footer/footer.component';
-import { MenuComponent } from './pages/dashboard/componentes/menu/menu.component';
+import { HeaderComponent } from './pages/dashboard/components/header/header.component';
+import { FooterComponent } from './pages/dashboard/components/footer/footer.component';
+import { MenuComponent } from './pages/dashboard/components/menu/menu.component';
+import { CharactersComponent } from './pages/dashboard/characters/characters.component';
+import { CharacterCardComponent } from './pages/dashboard/characters/components/character-card/character-card.component';
+import { CharacterDetailComponent } from './pages/dashboard/character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,10 @@ import { MenuComponent } from './pages/dashboard/componentes/menu/menu.component
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    CharactersComponent,
+    CharacterCardComponent,
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +41,13 @@ import { MenuComponent } from './pages/dashboard/componentes/menu/menu.component
     HttpClientModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
+    NbCardModule,
+    NbInputModule,
+    NbIconModule,
+    NbFormFieldModule,
+    NgxSpinnerModule,
+    NbTabsetModule,
+    NbListModule,
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({

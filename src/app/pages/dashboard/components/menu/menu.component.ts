@@ -11,12 +11,18 @@ export class MenuComponent implements OnInit {
     {
       title: 'dashboard',
       icon: 'layout-outline',
-      link: 'dashboard'
+      link: '/dashboard'
     },
     {
-      title: 'dashboard',
-      icon: 'layout-outline',
-      link: 'dashboard'
+      title: `marvel's`,
+      icon: 'film-outline',
+      children:  [
+        {
+          title: 'characters',
+          icon: 'people-outline',
+          link: 'characters'
+        }
+      ]
     }
    ];
   constructor() { }

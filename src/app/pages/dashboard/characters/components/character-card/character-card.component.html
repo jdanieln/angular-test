@@ -1,0 +1,10 @@
+<nb-card class="character-card"
+    (click)="goToDetailsView(character)">
+    <nb-card-header>{{ character?.name }}</nb-card-header>
+    <nb-card-body>
+        <img 
+            height="auto"
+            width="100%" [src]="character?.thumbnail.path + '.' + character?.thumbnail.extension" alt="">
+    </nb-card-body>
+    <nb-card-footer>{{ character?.description }}</nb-card-footer>
+</nb-card>
