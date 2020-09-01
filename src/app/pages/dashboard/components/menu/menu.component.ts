@@ -21,6 +21,11 @@ export class MenuComponent implements OnInit {
           title: 'characters',
           icon: 'people-outline',
           link: 'characters'
+        },
+        {
+          title: 'comics',
+          icon: 'book-open-outline',
+          link: 'comics'
         }
       ]
     }

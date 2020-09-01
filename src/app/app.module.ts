@@ -18,6 +18,9 @@ import { MenuComponent } from './pages/dashboard/components/menu/menu.component'
 import { CharactersComponent } from './pages/dashboard/characters/characters.component';
 import { CharacterCardComponent } from './pages/dashboard/characters/components/character-card/character-card.component';
 import { CharacterDetailComponent } from './pages/dashboard/character-detail/character-detail.component';
+import { ComicsComponent } from './pages/dashboard/comics/comics.component';
+import { ComicsDetailComponent } from './pages/dashboard/comics-detail/comics-detail.component';
+import { ComicCardComponent } from './pages/dashboard/comics/components/comic-card/comic-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CharacterDetailComponent } from './pages/dashboard/character-detail/cha
     MenuComponent,
     CharactersComponent,
     CharacterCardComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    ComicsComponent,
+    ComicsDetailComponent,
+    ComicCardComponent
   ],
   imports: [
     BrowserModule,

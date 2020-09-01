@@ -1,0 +1,41 @@
+<nb-card>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-6">
+                <app-comic-card [comic]="comic">
+                </app-comic-card>
+            </div>
+            <div class="col-6">
+                <nb-card>
+                    <nb-card-body>
+                        <nb-tabset>
+                        <nb-tab tabTitle="Prices">
+                            <div class="row">
+                                <nb-list>
+                                    <nb-list-item *ngFor="let price of comic?.prices">
+                                        {{ price.type }}: $ {{ price.price }}
+                                    </nb-list-item>
+                                </nb-list>
+                            </div>
+                        </nb-tab>
+                        <nb-tab tabTitle="Dates">
+                            <nb-list>
+                                <nb-list-item *ngFor="let date of comic?.dates">
+                                    {{ date.type }}: {{ date.date | date: 'short' }}
+                                </nb-list-item>
+                            </nb-list>
+                        </nb-tab>
+                        <nb-tab tabTitle="Stories">
+                            <nb-list>
+                                <nb-list-item *ngFor="let story of comic?.stories.items">
+                                    {{ story.name }}
+                                </nb-list-item>
+                            </nb-list>
+                        </nb-tab>
+                        </nb-tabset>    
+                    </nb-card-body>
+                </nb-card>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

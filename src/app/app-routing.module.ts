@@ -9,6 +9,8 @@ import {
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CharactersComponent } from './pages/dashboard/characters/characters.component';
 import { CharacterDetailComponent } from './pages/dashboard/character-detail/character-detail.component';
+import { ComicsComponent } from './pages/dashboard/comics/comics.component';
+import { ComicsDetailComponent } from './pages/dashboard/comics-detail/comics-detail.component';
 
 
 const routes: Routes = [
@@ -33,7 +35,15 @@ const routes: Routes = [
       {
         path: 'character/:characterId',
         component: CharacterDetailComponent
-      }
+      },
+      {
+        path: 'comics',
+        component: ComicsComponent
+      },
+      {
+        path: 'comic/:comicId',
+        component: ComicsDetailComponent
+      },
     ]
   },
   {

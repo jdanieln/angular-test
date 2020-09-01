@@ -1,0 +1,10 @@
+<nb-card class="comic-card"
+    (click)="goToDetailsView(comic)">
+    <nb-card-header>{{ comic?.title }}</nb-card-header>
+    <nb-card-body>
+        <img 
+            height="auto"
+            width="100%" [src]="comic?.thumbnail.path + '.' + comic?.thumbnail.extension" alt="">
+    </nb-card-body>
+    <nb-card-footer><div [innerHTML]="comic?.description"></div></nb-card-footer>
+</nb-card>
