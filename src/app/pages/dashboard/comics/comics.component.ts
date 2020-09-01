@@ -10,7 +10,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ComicsComponent implements OnInit {
   
   public comics: any;
-  
+  public selectedItem = undefined;
+
   constructor(
     private configService: ConfigService,
     private spinner: NgxSpinnerService
@@ -25,7 +26,6 @@ export class ComicsComponent implements OnInit {
       const resp: any = await this.configService.get('comics', queryParams);
       const { data } = resp;
       this.comics = data;
-      console.log('**', this.comics);
     } catch (error) {
       console.error(error);
     } finally {
@@ -34,7 +34,20 @@ export class ComicsComponent implements OnInit {
   }
   onKeyUpSearch(event) {
     const queryParams = event.target.value ? {
-      name: event.target.value
+      title: event.target.value
+    }: {};
+    this.getComics(queryParams);
+  }
+  onKeyUpSearchIssue(event) {
+    const queryParams = event.target.value ? {
+      issueNumber: Number(event.target.value)
+    }: {};
+    this.getComics(queryParams);
+  }
+
+  selectedFormatChange(event) {
+    const queryParams = event ? {
+      format: event
     }: {};
     this.getComics(queryParams);
   }

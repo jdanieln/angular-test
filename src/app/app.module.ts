@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbInputModule, NbIconModule, NbFormFieldModule, NbTabsetModule, NbListModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbInputModule, NbIconModule, NbFormFieldModule, NbTabsetModule, NbListModule, NbOptionModule, NbSelectModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,6 +54,8 @@ import { ComicCardComponent } from './pages/dashboard/comics/components/comic-ca
     NgxSpinnerModule,
     NbTabsetModule,
     NbListModule,
+    NbOptionModule,
+    NbSelectModule,
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({

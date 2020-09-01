@@ -1,16 +1,52 @@
 <div class="row">
     <div class="col-12">
-        <nb-form-field>
-            <input 
-                nbInput
-                (keyup)="onKeyUpSearch($event)"
-            >
-            <nb-icon
-                nbPrefix
-                [icon]="'search'"
-            >
-            </nb-icon>
-        </nb-form-field>
+        <div class="row">
+            <div class="col">
+                <nb-form-field>
+                    <input 
+                        nbInput
+                        placeholder="Search by title"
+                        (keyup)="onKeyUpSearch($event)"
+                    >
+                    <nb-icon
+                        nbPrefix
+                        [icon]="'search'"
+                    >
+                    </nb-icon>
+                </nb-form-field>
+            </div>
+            <div class="col">
+                <nb-form-field>
+                    <input 
+                        nbInput
+                        placeholder="Search by issueNumber"
+                        (keyup)="onKeyUpSearchIssue($event)"
+                    >
+                    <nb-icon
+                        nbPrefix
+                        [icon]="'search'"
+                    >
+                    </nb-icon>
+                </nb-form-field>
+            </div>
+            <div class="col">
+                <nb-select 
+                    placeholder="Format" 
+                    [(selected)]="selectedItem"
+                    (selectedChange)="selectedFormatChange($event)"
+                    >
+                    <nb-option value="">All</nb-option>
+                    <nb-option value="comic">Comic</nb-option>
+                    <nb-option value="magazine">Magazine</nb-option>
+                    <nb-option value="trade paperback">Trade paperback</nb-option>
+                    <nb-option value="hardcover">Hardcover</nb-option>
+                    <nb-option value="digest">digest</nb-option>
+                    <nb-option value="graphic novel">graphic novel</nb-option>
+                    <nb-option value="digital comic">Digital comic</nb-option>
+                    <nb-option value="infinite comic">Infinite comic</nb-option>
+                  </nb-select>
+            </div>
+        </div>
         <hr />
     </div>
     <div class="row" *ngIf="comics?.results && comics?.results.length > 0; else empty">
